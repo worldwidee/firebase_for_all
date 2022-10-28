@@ -10,6 +10,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_core_desktop/firebase_core_desktop.dart'
     as firebase_core_desktop;
+import 'package:firebase_auth_desktop/firebase_auth_desktop.dart'
+    as firebase_auth_desktop;
 import 'package:get/get.dart';
 import 'firebase/firestore/bridge.dart';
 import 'firebase/firestore/windows.dart';
@@ -36,6 +38,7 @@ class FirebaseCoreForAll {
     if (isValid() || (!isValid() && (auth /*|| functions*/))) {
       if (isDesktop()) {
         firebase_core_desktop.FirebaseCore.registerWith();
+        firebase_auth_desktop.FirebaseAuthDesktop.registerWith();
       }
       await Firebase.initializeApp(
           name: Get.find<FirebaseControlPanel>().name,

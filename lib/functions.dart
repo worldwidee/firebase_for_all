@@ -15,6 +15,10 @@ bool isWindows() {
   return Platform.isWindows;
 }
 
+bool isLinux() {
+  return Platform.isLinux;
+}
+
 bool isMobile() {
   return Platform.isIOS || Platform.isAndroid || Platform.isFuchsia;
 }
@@ -33,6 +37,10 @@ bool isFuchsia() {
 
 bool isValid() {
   return isMobile() || isMacos() || kIsWeb;
+}
+
+bool isDesktop() {
+  return isWindows() || isMacos() || isLinux();
 }
 
 List<String> imgExt = [

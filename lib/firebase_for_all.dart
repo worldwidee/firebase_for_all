@@ -8,6 +8,8 @@ export 'firebase/storage/models.dart';
 export 'firebase/storage/bridge.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_core_desktop/firebase_core_desktop.dart'
+    as firebase_core_desktop;
 import 'package:get/get.dart';
 import 'firebase/firestore/bridge.dart';
 import 'firebase/firestore/windows.dart';
@@ -17,14 +19,14 @@ import 'firebase/storage/windows.dart';
 import 'functions.dart';
 
 class FirebaseCoreForAll {
-  static Future<void> initializeApp(
-      {String? name,
-      required FirebaseOptions options,
-      required bool firestore,
-      required bool auth,
-      required bool storage,
-      //required bool functions,
-      }) async {
+  static Future<void> initializeApp({
+    String? name,
+    required FirebaseOptions options,
+    required bool firestore,
+    required bool auth,
+    required bool storage,
+    //required bool functions,
+  }) async {
     FirebaseControlPanel panel = Get.put(FirebaseControlPanel(
       firestore: firestore,
       storage: storage,
@@ -32,6 +34,9 @@ class FirebaseCoreForAll {
     panel.setOptions = options;
     panel.setName = name;
     if (isValid() || (!isValid() && (auth /*|| functions*/))) {
+      if (isDesktop()) {
+        firebase_core_desktop.FirebaseCore.registerWith();
+      }
       await Firebase.initializeApp(
           name: Get.find<FirebaseControlPanel>().name,
           options: Get.find<FirebaseControlPanel>().options);

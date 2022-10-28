@@ -11,19 +11,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-  firebase_core: ^1.24.0
-  cloud_firestore: ^3.5.1
-  firebase_auth: ^3.11.2
-  firebase_auth_desktop: ^1.0.2
-  firebase_core_desktop: ^1.0.2
-  firedart: ^0.9.0+1
-  firebase_dart: ^1.0.11
-  cloud_functions: ^3.3.9
   cupertino_icons: ^1.0.2
   path_provider: ^2.0.11
   get: ^4.6.5
-  firebase_storage: ^10.3.11
 
 dev_dependencies:
   flutter_test:

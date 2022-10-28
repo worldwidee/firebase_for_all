@@ -53,8 +53,7 @@ Old school way:
       ),
       firestore: true,
       auth: true,
-      storage: true,
-      functions: true);
+      storage: true);
 ```
 
 New flutterfire way:

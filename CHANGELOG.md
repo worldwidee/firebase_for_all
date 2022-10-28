@@ -11,3 +11,7 @@
 
 - Desktop support problem fixed
 
+## 0.0.4
+
+- Desktop support problem fixed
+

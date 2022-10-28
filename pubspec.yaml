@@ -1,6 +1,6 @@
 name: firebase_for_all
 description: This package is the way to use firebase features on all platforms without code changes
-version: 0.0.3
+version: 0.0.4
 homepage: https://github.com/worldwidee/firebase_for_all
 
 environment:
